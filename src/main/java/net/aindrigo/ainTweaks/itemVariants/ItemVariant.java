@@ -24,7 +24,7 @@ public class ItemVariant {
         this.origin = origin;
         this.name = name;
         this.enchantedEffect = enchantedEffect;
-        this.saturation = saturation / 2;
+        this.saturation = saturation * 2;
         this.itemId = itemId;
         variants.add(this);
         ids.add(this.itemId);

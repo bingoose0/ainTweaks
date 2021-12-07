@@ -11,7 +11,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class AinCommand extends BukkitCommand {
-    public static ArrayList<AinCommand> commands;
+    public static ArrayList<AinCommand> commands = new ArrayList<AinCommand>();
     public AinCommand(String name){
         super(name);
         commands.add(this);
