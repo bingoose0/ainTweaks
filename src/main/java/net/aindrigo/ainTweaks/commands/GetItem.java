@@ -26,11 +26,14 @@ public class GetItem extends AinCommand{
 
         String itemId = args[0];
         int numberOfItems = Integer.parseInt(args[1]);
-        ItemVariant variant = ItemVariant.getItemFromId(itemId);
         Player player = (Player) sender;
-        if(variant == null){
+        ItemVariant variant = null;
+        try{
+            variant = ItemVariant.getItemFromId(itemId);
+        } catch (Exception e) {
             sender.sendMessage(ChatColor.RED + "That isn't a valid item!");
         }
+
         ItemStack stack = variant.generateItem(numberOfItems);
         player.getInventory().addItem(stack);
         sender.sendMessage(ChatColor.GREEN + "Gave " + player.getDisplayName() + " " + String.valueOf(numberOfItems) + " " + variant.name);

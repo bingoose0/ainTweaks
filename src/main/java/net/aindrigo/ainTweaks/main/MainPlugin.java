@@ -1,5 +1,6 @@
 package net.aindrigo.ainTweaks.main;
 
+import net.aindrigo.ainTweaks.commands.AinCommand;
 import net.aindrigo.ainTweaks.commands.GetItem;
 import net.aindrigo.ainTweaks.events.AinListener;
 import net.aindrigo.ainTweaks.itemVariants.ButteredBread;
@@ -16,7 +17,7 @@ public class MainPlugin extends JavaPlugin {
     public static JavaPlugin plugin;
     public Logger logger;
     public static ButteredBread bread = new ButteredBread();
-    public CommandMap commandMap;
+    public static CommandMap commandMap;
     public static RatPoop ratPoop = new RatPoop();
     @Override
     public void onEnable() {
@@ -24,10 +25,9 @@ public class MainPlugin extends JavaPlugin {
         plugin = this;
         logger = getLogger();
         logger.info("Enabled");
-        this.getServer().getPluginManager().registerEvents(new AinListener(), this);
         commandMap = getMap();
-
-        commandMap.register("ainTweaks", new GetItem());
+        initCommands();
+        this.getServer().getPluginManager().registerEvents(new AinListener(), this);
     }
 
     @Override
@@ -48,5 +48,13 @@ public class MainPlugin extends JavaPlugin {
             e.printStackTrace();
         }
         return map;
+    }
+    private void initCommands(){
+        // Command initializing
+        GetItem getItem = new GetItem();
+
+
+        // Registering
+        AinCommand.registerCommands("ainTweaks");
     }
 }
