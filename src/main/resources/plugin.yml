@@ -1,0 +1,5 @@
+name: ainTweaks
+description: ain's Tweaks
+api-version: 1.18
+version: 1.0
+main: net.aindrigo.ainTweaks.main.MainPlugin
