@@ -11,15 +11,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodVariant {
+public class CustomFood {
     public String name;
     public Material origin;
     public boolean enchantedEffect;
     public int saturation;
-    public static ArrayList<FoodVariant> variants = new ArrayList<FoodVariant>();
+    public static ArrayList<CustomFood> variants = new ArrayList<CustomFood>();
     public static List<String> ids = new ArrayList<String>();
     public String itemId;
-    public FoodVariant(String name, boolean enchantedEffect, Material origin, int saturation, String itemId){
+    public CustomFood(String name, boolean enchantedEffect, Material origin, int saturation, String itemId){
         this.origin = origin;
         this.name = name;
         this.enchantedEffect = enchantedEffect;
@@ -50,8 +50,8 @@ public class FoodVariant {
             return false;
         }
     }
-    public static FoodVariant getItemFromId(String id){
-        for(FoodVariant i:variants){
+    public static CustomFood getItemFromId(String id){
+        for(CustomFood i:variants){
             if(i.itemId.equals(id)){
                 return i;
             }
@@ -59,7 +59,7 @@ public class FoodVariant {
         return null;
     }
     public static void processItem(Player player, ItemStack itemStack){
-        for(FoodVariant i:variants){
+        for(CustomFood i:variants){
             if(i.isItem(itemStack)){
                 int foodLevel = player.getFoodLevel();
                 player.setFoodLevel(foodLevel + i.saturation);

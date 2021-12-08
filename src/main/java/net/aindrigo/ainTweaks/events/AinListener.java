@@ -1,7 +1,7 @@
 package net.aindrigo.ainTweaks.events;
 
 import net.aindrigo.ainTweaks.itemVariants.ButteredBread;
-import net.aindrigo.ainTweaks.itemVariants.FoodVariant;
+import net.aindrigo.ainTweaks.itemVariants.CustomFood;
 import net.aindrigo.ainTweaks.main.MainPlugin;
 
 import org.bukkit.Material;
@@ -22,7 +22,7 @@ public class AinListener implements org.bukkit.event.Listener {
     public void onConsume(PlayerItemConsumeEvent event){
         ItemStack stack = event.getItem();
         Player player = event.getPlayer();
-        FoodVariant.processItem(player,stack);
+        CustomFood.processItem(player,stack);
     }
     @EventHandler
     public void onCraft(CraftItemEvent event){

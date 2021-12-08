@@ -1,10 +1,7 @@
 package net.aindrigo.ainTweaks.itemVariants;
 
-import net.aindrigo.ainTweaks.main.MainPlugin;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -12,14 +9,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemVariant {
+public class CustomItem {
     public String name;
     public Material origin;
     public boolean enchantedEffect;
-    public static ArrayList<ItemVariant> variants = new ArrayList<ItemVariant>();
+    public static ArrayList<CustomItem> variants = new ArrayList<CustomItem>();
     public static List<String> ids = new ArrayList<String>();
     public String itemId;
-    public ItemVariant(String name, boolean enchantedEffect, Material origin, String itemId){
+    public CustomItem(String name, boolean enchantedEffect, Material origin, String itemId){
         this.origin = origin;
         this.name = name;
         this.enchantedEffect = enchantedEffect;
@@ -49,8 +46,8 @@ public class ItemVariant {
             return false;
         }
     }
-    public static ItemVariant getItemFromId(String id){
-        for(ItemVariant i:variants){
+    public static CustomItem getItemFromId(String id){
+        for(CustomItem i:variants){
             if(i.itemId.equals(id)){
                 return i;
             }

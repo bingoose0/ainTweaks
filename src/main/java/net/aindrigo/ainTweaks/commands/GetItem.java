@@ -1,9 +1,8 @@
 package net.aindrigo.ainTweaks.commands;
 
-import net.aindrigo.ainTweaks.itemVariants.ItemVariant;
+import net.aindrigo.ainTweaks.itemVariants.CustomItem;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -28,9 +27,9 @@ public class GetItem extends AinCommand{
         String itemId = args[0];
         int numberOfItems = Integer.parseInt(args[1]);
         Player player = (Player) sender;
-        ItemVariant variant = null;
+        CustomItem variant = null;
         try{
-            variant = ItemVariant.getItemFromId(itemId);
+            variant = CustomItem.getItemFromId(itemId);
         } catch (Exception e) {
             sender.sendMessage(ChatColor.RED + "That isn't a valid item!");
             return;
