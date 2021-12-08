@@ -33,6 +33,7 @@ public class MainPlugin extends JavaPlugin {
         initCommands();
         this.getServer().getPluginManager().registerEvents(new AinListener(), this);
         Recipes.breadRecipe();
+        Recipes.butterRecipe();
     }
 
     @Override
