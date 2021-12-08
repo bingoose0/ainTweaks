@@ -11,8 +11,4 @@ Go to releases and click the latest download for your version.
 
 
 ## Development
-Go to the top and click Actions  
-Click on the latest workflow run you see  
-Go down until you see "Artifacts"  
-Click on the item that says "artifact"  
-Open the zip, and the download will be there  
+Go to https://jenkins.aindrigo.net/job/ainTweaks/, and download the last successful artifact
