@@ -10,6 +10,7 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 
 import javax.xml.stream.events.Namespace;
+import java.awt.*;
 
 public class Recipes {
 
@@ -36,6 +37,16 @@ public class Recipes {
         ShapelessRecipe recipe = new ShapelessRecipe(key, MainPlugin.mashedPotatos.generateItem(1));
         recipe.addIngredient(potatoes);
         recipe.addIngredient(stick);
+        Bukkit.addRecipe(recipe);
+    }
+
+    public static void candyAppleRecipe(){
+        Material apple = Material.APPLE;
+        Material sugar = Material.SUGAR;
+        NamespacedKey key = new NamespacedKey(MainPlugin.plugin, "candyapple");
+        ShapelessRecipe recipe = new ShapelessRecipe(key,MainPlugin.candyApple.generateItem(1));
+        recipe.addIngredient(apple);
+        recipe.addIngredient(sugar);
         Bukkit.addRecipe(recipe);
     }
 }

@@ -3,6 +3,7 @@ package net.aindrigo.ainTweaks.main;
 import net.aindrigo.ainTweaks.commands.AinCommand;
 import net.aindrigo.ainTweaks.commands.GetFoodItem;
 import net.aindrigo.ainTweaks.commands.GetItem;
+import net.aindrigo.ainTweaks.customItems.CandyApple;
 import net.aindrigo.ainTweaks.events.AinListener;
 import net.aindrigo.ainTweaks.customItems.Butter;
 import net.aindrigo.ainTweaks.customItems.ButteredBread;
@@ -22,7 +23,7 @@ public class MainPlugin extends JavaPlugin {
     public static CommandMap commandMap;
     public static Butter butter = new Butter();
     public static MashedPotatos mashedPotatos = new MashedPotatos();
-
+    public static CandyApple candyApple = new CandyApple();
     @Override
     public void onEnable() {
         super.onEnable();
@@ -35,6 +36,7 @@ public class MainPlugin extends JavaPlugin {
         Recipes.breadRecipe();
         Recipes.butterRecipe();
         Recipes.potatoRecipe();
+        Recipes.candyAppleRecipe();
     }
 
     @Override
