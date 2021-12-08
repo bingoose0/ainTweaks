@@ -7,7 +7,6 @@ import net.aindrigo.ainTweaks.events.AinListener;
 import net.aindrigo.ainTweaks.itemVariants.Butter;
 import net.aindrigo.ainTweaks.itemVariants.ButteredBread;
 import net.aindrigo.ainTweaks.itemVariants.MashedPotatos;
-import net.aindrigo.ainTweaks.itemVariants.RatPoop;
 import net.aindrigo.ainTweaks.recipe.Recipes;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
@@ -21,7 +20,6 @@ public class MainPlugin extends JavaPlugin {
     public Logger logger;
     public static ButteredBread bread = new ButteredBread();
     public static CommandMap commandMap;
-    public static RatPoop ratPoop = new RatPoop();
     public static Butter butter = new Butter();
     public static MashedPotatos mashedPotatos = new MashedPotatos();
 
