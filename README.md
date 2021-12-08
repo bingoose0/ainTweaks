@@ -4,8 +4,7 @@ ainTweaks add various new items to the game, as well as tweaks many things.
 
 ainTweaks also features an extendable food library, so that you may add what you like.  
 
-![Discord Shield](https://discordapp.com/api/guilds/918222339659923458/widget.png?style=shield)
-
+If you would like to discuss this, or need any support: https://discord.gg/zbyS8NrQ9h
 
 To download:
 
