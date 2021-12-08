@@ -60,8 +60,6 @@ public class FoodVariant {
     }
     public static void processItem(Player player, ItemStack itemStack){
         for(FoodVariant i:variants){
-            MainPlugin.plugin.getLogger().info(i.name);
-            MainPlugin.plugin.getLogger().info(itemStack.getItemMeta().getDisplayName());
             if(i.isItem(itemStack)){
                 int foodLevel = player.getFoodLevel();
                 player.setFoodLevel(foodLevel + i.saturation);
