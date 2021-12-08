@@ -11,4 +11,9 @@ jobs:
           java-version: 17
           distribution: 'adopt'
       - name: Build Gradle
-        run: ./gradlew build
+        run: ./gradlew shadowJar
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.3.0
+        with:
+          path: build/libs/
+        
