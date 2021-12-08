@@ -49,4 +49,14 @@ public class Recipes {
         recipe.addIngredient(sugar);
         Bukkit.addRecipe(recipe);
     }
+
+    public static void sushiRecipe(){
+        Material raw_cod = Material.COD;
+        Material seaweed = Material.DRIED_KELP;
+        NamespacedKey key = new NamespacedKey(MainPlugin.plugin, "sushi");
+        ShapelessRecipe recipe = new ShapelessRecipe(key, MainPlugin.sushi.generateItem(1));
+        recipe.addIngredient(raw_cod);
+        recipe.addIngredient(seaweed);
+        Bukkit.addRecipe(recipe);
+    }
 }
