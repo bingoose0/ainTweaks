@@ -28,4 +28,14 @@ public class Recipes {
         recipe.addIngredient(milk);
         Bukkit.addRecipe(recipe);
     }
+
+    public static void potatoRecipe(){
+        Material potatoes = Material.POTATO;
+        Material stick = Material.STICK;
+        NamespacedKey key = new NamespacedKey(MainPlugin.plugin, "mashedpotatos");
+        ShapelessRecipe recipe = new ShapelessRecipe(key, MainPlugin.mashedPotatos.generateItem(1));
+        recipe.addIngredient(potatoes);
+        recipe.addIngredient(stick);
+        Bukkit.addRecipe(recipe);
+    }
 }
