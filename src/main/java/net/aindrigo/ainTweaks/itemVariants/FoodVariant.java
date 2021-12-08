@@ -3,7 +3,6 @@ package net.aindrigo.ainTweaks.itemVariants;
 import net.aindrigo.ainTweaks.main.MainPlugin;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -12,17 +11,19 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemVariant {
+public class FoodVariant {
     public String name;
     public Material origin;
     public boolean enchantedEffect;
-    public static ArrayList<ItemVariant> variants = new ArrayList<ItemVariant>();
+    public int saturation;
+    public static ArrayList<FoodVariant> variants = new ArrayList<FoodVariant>();
     public static List<String> ids = new ArrayList<String>();
     public String itemId;
-    public ItemVariant(String name, boolean enchantedEffect, Material origin, String itemId){
+    public FoodVariant(String name, boolean enchantedEffect, Material origin, int saturation, String itemId){
         this.origin = origin;
         this.name = name;
         this.enchantedEffect = enchantedEffect;
+        this.saturation = saturation * 2;
         this.itemId = itemId;
         variants.add(this);
         ids.add(this.itemId);
@@ -49,15 +50,25 @@ public class ItemVariant {
             return false;
         }
     }
-    public static ItemVariant getItemFromId(String id){
-        for(ItemVariant i:variants){
+    public static FoodVariant getItemFromId(String id){
+        for(FoodVariant i:variants){
             if(i.itemId.equals(id)){
                 return i;
             }
         }
         return null;
     }
-
+    public static void processItem(Player player, ItemStack itemStack){
+        for(FoodVariant i:variants){
+            MainPlugin.plugin.getLogger().info(i.name);
+            MainPlugin.plugin.getLogger().info(itemStack.getItemMeta().getDisplayName());
+            if(i.isItem(itemStack)){
+                int foodLevel = player.getFoodLevel();
+                player.setFoodLevel(foodLevel + i.saturation);
+                MainPlugin.plugin.getLogger().info("Item is correct");
+            }
+        }
+    }
 
 
 }

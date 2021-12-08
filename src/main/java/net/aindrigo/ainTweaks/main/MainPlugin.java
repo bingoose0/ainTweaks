@@ -1,12 +1,14 @@
 package net.aindrigo.ainTweaks.main;
 
 import net.aindrigo.ainTweaks.commands.AinCommand;
+import net.aindrigo.ainTweaks.commands.GetFoodItem;
 import net.aindrigo.ainTweaks.commands.GetItem;
 import net.aindrigo.ainTweaks.events.AinListener;
+import net.aindrigo.ainTweaks.itemVariants.Butter;
 import net.aindrigo.ainTweaks.itemVariants.ButteredBread;
 import net.aindrigo.ainTweaks.itemVariants.RatPoop;
+import net.aindrigo.ainTweaks.recipe.Recipes;
 import org.bukkit.Bukkit;
-import org.bukkit.Server;
 import org.bukkit.command.CommandMap;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +21,8 @@ public class MainPlugin extends JavaPlugin {
     public static ButteredBread bread = new ButteredBread();
     public static CommandMap commandMap;
     public static RatPoop ratPoop = new RatPoop();
+    public static Butter butter = new Butter();
+
     @Override
     public void onEnable() {
         super.onEnable();
@@ -28,6 +32,7 @@ public class MainPlugin extends JavaPlugin {
         commandMap = getMap();
         initCommands();
         this.getServer().getPluginManager().registerEvents(new AinListener(), this);
+        Recipes.breadRecipe();
     }
 
     @Override
@@ -51,6 +56,7 @@ public class MainPlugin extends JavaPlugin {
     }
     private void initCommands(){
         // Command initializing
+        GetFoodItem getFoodItem = new GetFoodItem();
         GetItem getItem = new GetItem();
 
 
