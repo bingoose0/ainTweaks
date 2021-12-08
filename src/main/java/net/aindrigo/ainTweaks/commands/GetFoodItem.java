@@ -1,6 +1,6 @@
 package net.aindrigo.ainTweaks.commands;
 
-import net.aindrigo.ainTweaks.itemVariants.CustomFood;
+import net.aindrigo.ainTweaks.customItems.CustomFood;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -27,17 +27,17 @@ public class GetFoodItem extends AinCommand{
         String itemId = args[0];
         int numberOfItems = Integer.parseInt(args[1]);
         Player player = (Player) sender;
-        CustomFood variant = null;
+        CustomFood customFood = null;
         try{
-            variant = CustomFood.getItemFromId(itemId);
+            customFood = CustomFood.getItemFromId(itemId);
         } catch (Exception e) {
             sender.sendMessage(ChatColor.RED + "That isn't a valid item!");
             return;
         }
 
-        ItemStack stack = variant.generateItem(numberOfItems);
+        ItemStack stack = customFood.generateItem(numberOfItems);
         player.getInventory().addItem(stack);
-        sender.sendMessage(ChatColor.GREEN + "Gave " + player.getDisplayName() + " " + String.valueOf(numberOfItems) + " " + variant.name);
+        sender.sendMessage(ChatColor.GREEN + "Gave " + player.getDisplayName() + " " + String.valueOf(numberOfItems) + " " + customFood.name);
 
     }
 }

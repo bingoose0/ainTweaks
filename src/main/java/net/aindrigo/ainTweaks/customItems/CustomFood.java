@@ -1,4 +1,4 @@
-package net.aindrigo.ainTweaks.itemVariants;
+package net.aindrigo.ainTweaks.customItems;
 
 import net.aindrigo.ainTweaks.main.MainPlugin;
 import org.bukkit.Material;

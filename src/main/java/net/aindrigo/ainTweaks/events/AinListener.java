@@ -1,7 +1,7 @@
 package net.aindrigo.ainTweaks.events;
 
-import net.aindrigo.ainTweaks.itemVariants.ButteredBread;
-import net.aindrigo.ainTweaks.itemVariants.CustomFood;
+import net.aindrigo.ainTweaks.customItems.ButteredBread;
+import net.aindrigo.ainTweaks.customItems.CustomFood;
 import net.aindrigo.ainTweaks.main.MainPlugin;
 
 import org.bukkit.Material;
