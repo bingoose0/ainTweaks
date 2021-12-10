@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'net.aindrigo'
-version '1.18-1.0.0'
+version 'b1.18-1.0.1'
 
 repositories {
     mavenCentral()

@@ -21,7 +21,6 @@ public class MainPlugin extends JavaPlugin {
     public static Butter butter = new Butter();
     public static MashedPotatos mashedPotatos = new MashedPotatos();
     public static CandyApple candyApple = new CandyApple();
-    public static Sushi sushi = new Sushi();
     @Override
     public void onEnable() {
         super.onEnable();
@@ -35,7 +34,6 @@ public class MainPlugin extends JavaPlugin {
         Recipes.butterRecipe();
         Recipes.potatoRecipe();
         Recipes.candyAppleRecipe();
-        Recipes.sushiRecipe();
     }
 
     @Override
