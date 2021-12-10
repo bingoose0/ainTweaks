@@ -16,6 +16,7 @@ public class CustomItem {
     public static ArrayList<CustomItem> variants = new ArrayList<CustomItem>();
     public static List<String> ids = new ArrayList<String>();
     public String itemId;
+    public ItemMeta meta;
     public CustomItem(String name, boolean enchantedEffect, Material origin, String itemId){
         this.origin = origin;
         this.name = name;
@@ -23,17 +24,21 @@ public class CustomItem {
         this.itemId = itemId;
         variants.add(this);
         ids.add(this.itemId);
+
+    }
+    public ItemMeta getItemMeta(){
+        meta.setDisplayName(this.name);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        return meta;
     }
 
+    public void setItemMeta(ItemMeta itemMeta){
+        this.meta = itemMeta;
+    }
     public ItemStack generateItem(int numberofitems){
         ItemStack item = new ItemStack(this.origin, numberofitems);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(this.name);
-        if(this.enchantedEffect){
-            item.addUnsafeEnchantment(Enchantment.MULTISHOT, 1);
-        }
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
+
+        item.setItemMeta(getItemMeta());
 
         return item;
     }

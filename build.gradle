@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'net.aindrigo'
-version 'b1.18-1.0.1'
+version '1.18.1-1.0.2'
 
 repositories {
     mavenCentral()
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.18-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }

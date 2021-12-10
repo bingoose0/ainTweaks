@@ -19,6 +19,7 @@ public class CustomFood {
     public static ArrayList<CustomFood> variants = new ArrayList<CustomFood>();
     public static List<String> ids = new ArrayList<String>();
     public String itemId;
+    public ItemMeta meta;
     public CustomFood(String name, boolean enchantedEffect, Material origin, int saturation, String itemId){
         this.origin = origin;
         this.name = name;
@@ -27,18 +28,21 @@ public class CustomFood {
         this.itemId = itemId;
         variants.add(this);
         ids.add(this.itemId);
-    }
+        meta = new ItemStack(origin).getItemMeta();
 
+    }
+    public ItemMeta getItemMeta(){
+        meta.setDisplayName(this.name);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        return meta;
+    }
+    public void setItemMeta(ItemMeta itemMeta){
+        this.meta = itemMeta;
+    }
     public ItemStack generateItem(int numberofitems){
         ItemStack item = new ItemStack(this.origin, numberofitems);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(this.name);
-        if(this.enchantedEffect){
-            item.addUnsafeEnchantment(Enchantment.MULTISHOT, 1);
-        }
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        ItemMeta meta = getItemMeta();
         item.setItemMeta(meta);
-
         return item;
     }
 
