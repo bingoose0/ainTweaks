@@ -24,7 +24,7 @@ public class CustomItem {
         this.itemId = itemId;
         variants.add(this);
         ids.add(this.itemId);
-
+        meta = new ItemStack(origin).getItemMeta();
     }
     public ItemMeta getItemMeta(){
         meta.setDisplayName(this.name);
