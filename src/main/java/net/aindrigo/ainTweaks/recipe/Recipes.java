@@ -25,7 +25,7 @@ public class Recipes {
     public static void butterRecipe(){
         Material milk = Material.MILK_BUCKET;
         NamespacedKey key = new NamespacedKey(MainPlugin.plugin, "butter");
-        ShapelessRecipe recipe = new ShapelessRecipe(key, MainPlugin.butter.generateItem(1));
+        ShapelessRecipe recipe = new ShapelessRecipe(key, MainPlugin.butter.generateItem(4));
         recipe.addIngredient(milk);
         Bukkit.addRecipe(recipe);
     }
