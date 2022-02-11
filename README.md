@@ -1,7 +1,4 @@
 # ainTweaks
-### Warning: This project will not be updated as much anymore. I will attempt to keep up with new minecraft versions. You may fork this and keep it updated if you like.  
-### My only request is that this is kept open-source, including any forks. 
-
 
 ainTweaks add various new items to the game, as well as tweaks many things.  
 
