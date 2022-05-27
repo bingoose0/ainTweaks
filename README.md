@@ -13,7 +13,7 @@ Go to releases and click the latest download for your version.
 
 
 ## Development
-Go to https://jenkins.aindrigo.net/job/ainTweaks/, and download the last successful artifact
+Go to https://ci.aindrigo.net/viewLog.html?buildId=4&buildTypeId=AinTweaks_Build&tab=artifacts, and download the last successful artifact
 
 ## Building
 To build ainTweaks, you must run  
